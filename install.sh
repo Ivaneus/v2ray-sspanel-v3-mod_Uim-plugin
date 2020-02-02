@@ -267,7 +267,6 @@ config_caddy_docker(){
     sed -i "s|V2RAY_EMAIL=xxxx@outlook.com|V2RAY_EMAIL=${v2ray_email}|"  ./docker-compose.yml
     sed -i "s|V2RAY_PORT=10550|V2RAY_PORT=${v2ray_local_port}|"  ./docker-compose.yml
     sed -i "s|V2RAY_OUTSIDE_PORT=443|V2RAY_OUTSIDE_PORT=${caddy_listen_port}|"  ./docker-compose.yml
-    sed -i "s| tls {$V2RAY_EMAIL}|tls ${v2ray_email}|"  ./Caddyfile
 }
 
 # Config caddy_docker
