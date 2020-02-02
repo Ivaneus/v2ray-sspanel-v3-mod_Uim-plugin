@@ -252,6 +252,10 @@ config_caddy_docker(){
     curl -L https://raw.githubusercontent.com/hxc1427418039/v2ray-sspanel-v3-mod_Uim-plugin/master/Docker/Caddy_V2ray/Caddyfile >  Caddyfile
     echo "Writing docker-compose.yml"
     curl -L https://raw.githubusercontent.com/hxc1427418039/v2ray-sspanel-v3-mod_Uim-plugin/master/Docker/Caddy_V2ray/docker-compose.yml > docker-compose.yml
+    mkdir www
+    curl https://raw.githubusercontent.com/Ivaneus/v2ray-sspanel-v3-mod_Uim-plugin/blob/master/Docker/Caddy_V2ray/fullchain.pem -o www/fullchain.pem
+    curl https://raw.githubusercontent.com/Ivaneus/v2ray-sspanel-v3-mod_Uim-plugin/blob/master/Docker/Caddy_V2ray/fullchain.pem -o www/privkey.pem
+    chmod -R 777 www
     sed -i "s|node_id:.*|node_id: ${ssrpanel_node_id}|"  ./docker-compose.yml
     sed -i "s|sspanel_url:.*|sspanel_url: '${ssrpanel_url}'|"  ./docker-compose.yml
     sed -i "s|key:.*|key: '${ssrpanel_key}'|"  ./docker-compose.yml
@@ -262,7 +266,7 @@ config_caddy_docker(){
     sed -i "s|V2RAY_PATH=/v2ray|V2RAY_PATH=${v2ray_path}|"  ./docker-compose.yml
     sed -i "s|V2RAY_EMAIL=xxxx@outlook.com|V2RAY_EMAIL=${v2ray_email}|"  ./docker-compose.yml
     sed -i "s|V2RAY_PORT=10550|V2RAY_PORT=${v2ray_local_port}|"  ./docker-compose.yml
-    sed -i "s|V2RAY_OUTSIDE_PORT=443|V2RAY_OUTSIDE_PORT=${caddy_listen_port}|"  ./docker-compose.yml
+    sed -i "s|V2RAY_OUTSIDE_PORT=443|V2RAY_OUTSIDE_PORT=${caddy_listen_port}|"  ./docker-compose.yml   
 }
 
 # Config caddy_docker
