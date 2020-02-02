@@ -192,12 +192,12 @@ pre_install_caddy(){
     echo
 
     # Set caddy v2ray tls email
-    echo "caddy v2ray tls email"
+    echo "caddy v2ray tls email or path"
     read -p "(No default ):" v2ray_email
     [ -z "${v2ray_email}" ]
     echo
     echo "---------------------------"
-    echo "v2ray_email = ${v2ray_email}"
+    echo "v2ray_email or path = ${v2ray_email}"
     echo "---------------------------"
     echo
 
