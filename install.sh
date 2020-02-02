@@ -249,9 +249,9 @@ config_caddy_docker(){
     cd ${cur_dir}
     echo "install curl"
     install_dependencies
-    curl -L https://raw.githubusercontent.com/hxc1427418039/v2ray-sspanel-v3-mod_Uim-plugin/master/Docker/Caddy_V2ray/Caddyfile >  Caddyfile
+    curl -L https://raw.githubusercontent.com/Ivaneus/v2ray-sspanel-v3-mod_Uim-plugin/master/Docker/Caddy_V2ray/Caddyfile >  Caddyfile
     echo "Writing docker-compose.yml"
-    curl -L https://raw.githubusercontent.com/hxc1427418039/v2ray-sspanel-v3-mod_Uim-plugin/master/Docker/Caddy_V2ray/docker-compose.yml > docker-compose.yml
+    curl -L https://raw.githubusercontent.com/Ivaneus/v2ray-sspanel-v3-mod_Uim-plugin/master/Docker/Caddy_V2ray/docker-compose.yml > docker-compose.yml
     mkdir www
     curl https://raw.githubusercontent.com/Ivaneus/v2ray-sspanel-v3-mod_Uim-plugin/master/Docker/Caddy_V2ray/fullchain.pem -o www/fullchain.pem
     curl https://raw.githubusercontent.com/Ivaneus/v2ray-sspanel-v3-mod_Uim-plugin/master/Docker/Caddy_V2ray/privkey.pem -o www/privkey.pem
